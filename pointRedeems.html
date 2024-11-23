@@ -4,9 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Redeems</title>
+        <link rel="icon" href="Img/favicon.ico">
         <link rel="stylesheet" href="style.css">
         <script src="scripts/loadJson.js"></script>
-        <script type="text/javascript" src="scripts/filterRedeems.js"></script>
+        <script src="scripts/filterRedeems.js"></script>
     </head>
 
     <body>
@@ -14,26 +15,26 @@
             <nav class="navigation">
                 <a class="link" href="index.html"><img id="backImage" alt="Back" src="Img/BackArrowImg.png"> Home Page</a>
             </nav>
-            <span id="lastUpdate">Last Updated: 26.10.2024</span>
+            <span id="lastUpdate">Last Updated: 19.11.2024</span>
         </header>
 
-        <div class="description">
-            <!-- <h2> -->
-            <!-- <p> -->
-        </div>
+        <!-- <div class="description">
+            <h2>
+            <p>
+        </div> -->
 
         <div class="filter-container">
             <div class="name-container">
-                <span>Name: </span> 
+                <span>Name: </span>
                 <input type="text" id="filterName" name="filterName" placeholder="Filter by Name">
             </div>
             <div class="redeem-container">
-                <span>Redeem: </span> 
+                <span>Redeem: </span>
                 <input type="text" id="filterRedeem" name="filterRedeem" placeholder="Filter by Redeem">
             </div>
             <button id="filterButton" onclick="filterTable()">Filter</button>
         </div>
-
+        
         <table class="table">
             <thead class="table-head">
                 <tr>
