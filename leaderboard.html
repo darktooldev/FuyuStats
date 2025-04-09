@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="icon" href="Img/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navigation">
+            <a class="link headerLink" href="index.html"><img id="backImage" alt="Back" src="Img/BackArrowImg.png"> Home Page</a>
+        </nav>
+        <span id="lastUpdate">Last Updated: 28.11.2024</span>
+    </header>
+
+    <table class="table">
+        <thead class="table-head">
+            <tr>
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody class="table-body"></tbody>
+    </table>
+
+    <script src="scripts/leaderboardLoadJson.js"></script>
+</body>
+</html>

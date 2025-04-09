@@ -10,6 +10,7 @@ body {
     color: var(--yellow);
 }
 
+/* navigation */
 .header {
     display: flex;
     border: 5px solid var(--yellow);
@@ -22,31 +23,34 @@ body {
     padding: 0px 20px 0px;
 }
 
-.header .navigation .link {
+.link {
     color: var(--yellow);
-    font-size: 120%;
+}
+
+.headerLink {
     text-decoration: none;
+    font-size: 120%;
     margin-right: 15px;
 }
 
-.header .navigation .link:hover {
+.link:hover {
     text-decoration: underline;
 }
 
-.header .navigation .trennstrich {
+.trennstrich {
     font-size: 150%;
     margin-right: 15px;
 }
 
-.header #lastUpdate {
-    font-size: 105%;
-}
-
-.header .navigation .link #backImage {
+#backImage {
     width: 20px;
     height: 20px;
     position: relative;
     top: 3px;
+}
+
+#lastUpdate {
+    font-size: 105%;
 }
 
 /* Home Page */
@@ -58,23 +62,18 @@ body {
     padding: 10px 5px 0px;
 }
 
-.container .box {
+.box {
     background-color: var(--blue);
     padding: 10px;
     margin-bottom: 10px;
 }
 
-.container .box #HomePageTitle {
+.boxTitel {
     margin: 0;
+}
+
+.homePage{
     text-align: center;
-}
-
-.container .box #FeatureTitle {
-    margin: 0;
-}
-
-.container .box #ChangeLogTitle {
-    margin: 0;
 }
 
 /* Redeems Page */
@@ -97,7 +96,6 @@ body {
 .filter-container input {
     border-style: none;
     border-radius: 3px;
-    flex-grow: 1;
     width: 60%;
     font-size: 110%;
     background-color: var(--yellow);
@@ -123,7 +121,6 @@ body {
     border: 5px solid rgb(74, 43, 0);
     border-radius: 10px;
     background-color: var(--blue);
-    overflow: hidden;
     min-width: 50%;
     text-align: left;
 }

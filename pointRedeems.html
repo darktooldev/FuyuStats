@@ -6,22 +6,16 @@
         <title>Redeems</title>
         <link rel="icon" href="Img/favicon.ico">
         <link rel="stylesheet" href="style.css">
-        <script src="scripts/loadJson.js"></script>
         <script src="scripts/filterRedeems.js"></script>
     </head>
 
     <body>
         <header class="header">
             <nav class="navigation">
-                <a class="link" href="index.html"><img id="backImage" alt="Back" src="Img/BackArrowImg.png"> Home Page</a>
+                <a class="link headerLink" href="index.html"><img id="backImage" alt="Back" src="Img/BackArrowImg.png"> Home Page</a>
             </nav>
             <span id="lastUpdate">Last Updated: 19.11.2024</span>
         </header>
-
-        <!-- <div class="description">
-            <h2>
-            <p>
-        </div> -->
 
         <div class="filter-container">
             <div class="name-container">
@@ -29,8 +23,8 @@
                 <input type="text" id="filterName" name="filterName" placeholder="Filter by Name">
             </div>
             <div class="redeem-container">
-                <span>Redeem: </span>
-                <input type="text" id="filterRedeem" name="filterRedeem" placeholder="Filter by Redeem">
+                <span>Reward: </span>
+                <input type="text" id="filterRedeem" name="filterRedeem" placeholder="Filter by Reward">
             </div>
             <button id="filterButton" onclick="filterTable()">Filter</button>
         </div>
@@ -40,12 +34,13 @@
                 <tr>
                     <th>Redeemed At</th>
                     <th>Username</th>
-                    <th>Title</th>
+                    <th>Reward</th>
                     <th>Cost</th>
                 </tr>
             </thead>
             <tbody class="table-body"></tbody>
             <tfoot class="table-foot"></tfoot>
         </table>
+        <script src="scripts/redeemsLoadJson.js"></script>
     </body>
 </html>
