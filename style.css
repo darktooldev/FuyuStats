@@ -23,6 +23,11 @@ body {
     padding: 0px 20px 0px;
 }
 
+.header .navigation {
+    display: flex;
+    flex-shrink: 0;
+}
+
 .link {
     color: var(--yellow);
 }
@@ -51,6 +56,21 @@ body {
 
 #lastUpdate {
     font-size: 105%;
+    text-align: right;
+}
+
+@media screen and (orientation: portrait) {
+    .header .navigation {
+        flex-direction: column;
+    }
+
+    .hp {
+        height: 105px;
+    }
+
+    .headerLink {
+        font-size: 110%;
+    }
 }
 
 /* Home Page */
@@ -62,18 +82,28 @@ body {
     padding: 10px 5px 0px;
 }
 
+@media screen and (orientation: portrait) {
+    .container {
+        width: 90%;
+    }
+}
+
 .box {
     background-color: var(--blue);
     padding: 10px;
     margin-bottom: 10px;
 }
 
+.homePage{
+    text-align: center;
+}
+
 .boxTitel {
     margin: 0;
 }
 
-.homePage{
-    text-align: center;
+li {
+    margin-bottom: 10px;
 }
 
 /* Redeems Page */
@@ -96,7 +126,7 @@ body {
 .filter-container input {
     border-style: none;
     border-radius: 3px;
-    width: 60%;
+    width: 80%;
     font-size: 110%;
     background-color: var(--yellow);
     color: rgb(74, 43, 0);
@@ -107,11 +137,27 @@ body {
 }
 
 .filter-container #filterButton {
-    width: 12%;
+    width: 10%;
     font-size: 100%;
     background-color: var(--yellow);
     color: rgb(74, 43, 0);
     border-radius: 5px;
+}
+
+@media screen and (orientation: portrait) {
+    .filter-container {
+        margin: 0px 10px 20px;
+        width: 90%;
+    }
+
+    .filter-container #filterButton {
+        width: 25%;
+    }
+
+    .filter-container input {
+        width: 90%;
+        font-size: 100%;
+    }
 }
 
 .table {
@@ -121,7 +167,7 @@ body {
     border: 5px solid rgb(74, 43, 0);
     border-radius: 10px;
     background-color: var(--blue);
-    min-width: 50%;
+    width: 50%;
     text-align: left;
 }
 
@@ -142,4 +188,36 @@ body {
     font-size: 110%;
     padding: 7px;
     border-top: 3px solid var(--yellow);
+}
+
+@media screen and (orientation: portrait) {
+    .table {
+        margin: 0px 10px 0px;
+        width: 95%;
+        text-align: center;
+    }
+
+    .table-head th {
+        font-size: 105%;
+        padding: 7px 0px 7px;
+    }
+
+    .table-body td {
+        font-size: 100%;
+        padding: 10px;
+    }
+
+    .redeemBody td{
+        padding: 0px;
+    }
+
+    .redeemBody td:first-child {
+        font-size: 90%;
+        padding: 10px 0px 10px;
+        
+    }
+
+    .table-foot th {
+        font-size: 105%;
+    }
 }

@@ -4,6 +4,7 @@ async function loadJson() {
         const tableFoot = document.querySelector(".table-foot");
     
         const jsonData = await fetch("scripts/Data.json");
+
         const data = await jsonData.json();
 
         let totalRedeems = 0;
@@ -11,27 +12,27 @@ async function loadJson() {
 
         data.forEach(item => {
             totalRedeems++;
-            totalCost += parseInt(item.cost);
+            totalCost += parseInt(item[3]);
 
             const row = document.createElement("tr");
 
             const redeemedAtCell = document.createElement('td');
-            redeemedAtCell.textContent = item.redeemed_at;
+            redeemedAtCell.textContent = item[0];
             row.appendChild(redeemedAtCell);
 
             const usernameCell = document.createElement('td');
-            usernameCell.textContent = item.user_name;
+            usernameCell.textContent = item[1];
             row.appendChild(usernameCell);
 
             const titleCell = document.createElement('td');
-            titleCell.textContent = item.title;
+            titleCell.textContent = item[2];
             row.appendChild(titleCell);
 
             const costCell = document.createElement('td');
-            costCell.textContent = item.cost;
+            costCell.textContent = item[3];
             row.appendChild(costCell);
 
-            tableBody.appendChild(row);
+            tableBody.insertBefore(row, tableBody.firstChild);
         });
 
         const footRow = document.createElement("tr");

@@ -7,12 +7,12 @@ async function loadLeaderboard() {
     const map = new Map();
 
     data.forEach(item => {
-        if(map.has(item.user_name)) {
-            let curr_amount = parseInt(map.get(item.user_name));
-            curr_amount += parseInt(item.cost);
-            map.set(item.user_name, curr_amount);
+        if(map.has(item[1])) {
+            let curr_amount = parseInt(map.get(item[1]));
+            curr_amount += parseInt(item[3]);
+            map.set(item[1], curr_amount);
         } else {
-            map.set(item.user_name, parseInt(item.cost));
+            map.set(item[1], parseInt(item[3]));
         }
     });
 
