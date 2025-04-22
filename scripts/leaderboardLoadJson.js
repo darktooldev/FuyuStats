@@ -1,10 +1,30 @@
-async function loadLeaderboard() {
-    const tableBody = document.querySelector(".table-body");
+const map = new Map();
 
-    const jsonData = await fetch("scripts/Data.json");
+const tableBody = document.querySelector(".table-body");
+
+var selectedMonth = document.getElementById("selectMonth");
+selectedMonth.addEventListener('change', loadMonth);
+
+loadMonth();
+
+async function loadMonth() {
+    tableBody.innerHTML = "";
+    map.clear();
+    
+    if(selectedMonth.value === "all") {
+        const options = selectedMonth.options;
+        for(let i = 1; i < options.length; i++) {
+            await loadFileIntoMap(options[i].value+"-Data.json");
+        }
+    } else {
+        await loadFileIntoMap(selectedMonth.value+"-Data.json");
+    }
+    loadLeaderboard();
+}
+
+async function loadFileIntoMap(fileName) {
+    const jsonData = await fetch("scripts/"+fileName);
     const data = await jsonData.json();
-
-    const map = new Map();
 
     data.forEach(item => {
         if(map.has(item[1])) {
@@ -15,7 +35,9 @@ async function loadLeaderboard() {
             map.set(item[1], parseInt(item[3]));
         }
     });
+}
 
+function loadLeaderboard() {
     const array = Array.from(map);
     array.sort((item1, item2) => item2[1] - item1[1]);
 
@@ -41,8 +63,5 @@ async function loadLeaderboard() {
         tableBody.appendChild(row);
 
         rank++;
-
-        // console.log(`Username: ${item[0]} | Amount: ${item[1]}`);
     });
 }
-loadLeaderboard();
