@@ -1,4 +1,5 @@
 const map = new Map();
+const cachedJsonMap = new Map();
 
 const tableBody = document.querySelector(".table-body");
 
@@ -22,9 +23,24 @@ async function loadMonth() {
     loadLeaderboard();
 }
 
+async function fetchJsonData(fileName) {
+    if(cachedJsonMap.has(fileName)) {
+        return cachedJsonMap.get(fileName);
+    }
+
+    try {
+        const jsonData = await fetch("scripts/"+fileName);
+        const data = await jsonData.json();
+
+        cachedJsonMap.set(fileName, data);
+        return data;
+    } catch (error){
+        console.error("Error fetching json data:", error);
+    }
+}
+
 async function loadFileIntoMap(fileName) {
-    const jsonData = await fetch("scripts/"+fileName);
-    const data = await jsonData.json();
+    const data = await fetchJsonData(fileName);
 
     data.forEach(item => {
         if(map.has(item[1])) {
