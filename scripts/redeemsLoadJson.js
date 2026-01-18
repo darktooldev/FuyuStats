@@ -14,10 +14,10 @@ async function loadMonth() {
     tableFoot.innerHTML = "";
     totalRedeems = 0;
     totalCost = 0;
-    
+
     if(selectedMonth.value === "all") {
         const options = selectedMonth.options;
-        for(let i = 1; i < options.length; i++) {
+        for(let i = options.length-2; i >= 0; i--) {
             await addDataToTable(options[i].value+"-Data.json");
         }
     } else {

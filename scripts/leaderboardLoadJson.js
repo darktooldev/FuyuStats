@@ -14,7 +14,8 @@ async function loadMonth() {
     
     if(selectedMonth.value === "all") {
         const options = selectedMonth.options;
-        for(let i = 1; i < options.length; i++) {
+        for(let i = options.length-2; i >= 0; i--) {
+            console.log(options[i].value);
             await loadFileIntoMap(options[i].value+"-Data.json");
         }
     } else {
