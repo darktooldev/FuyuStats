@@ -1,0 +1,46 @@
+main {
+    border: 5px solid var(--brown);
+    border-radius: 7px;
+    width: 45%;
+    margin: auto auto 20px auto;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hpBox {
+    background-color: var(--blue);
+    padding: 10px;
+    margin: 5px;
+}
+
+.un {
+    text-decoration: underline;
+}
+
+#hpTitle {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+#img {
+    position: relative;
+    top: 8px;
+}
+
+li {
+    padding: 3px;
+    margin-bottom: 3px;
+}
+
+@media screen and (orientation: portrait) {
+    main {
+        width: 92%;
+        padding: 0px;
+    }
+
+    #hpTitle {
+        margin-bottom: 10px;
+    }
+}

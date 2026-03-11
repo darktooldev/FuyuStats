@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redeems</title>
+    <link rel="icon" href="assets/Img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/redeems.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/table.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="navBox">
+                <a class="navLink" href="index.html"><img id="img" src="assets/Img/BackArrowImg.png" alt="[Back Arrow]" width="20" height="20">Home Page</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <span class="optionContainer">
+            <label>
+                Select Month:
+                <select class="bgAndColor" name="selectMonth" id="monthSelector">
+                    <option value="select" selected="selected">--Select Month--</option>
+                    <option value="26-02">February 26</option>
+                    <option value="26-01">January 26</option>
+                    <option value="25-12">December 25</option>
+                    <option value="25-11">November 25</option>
+                    <option value="25-10">October 25</option>
+                    <option value="25-09">September 25</option>
+                    <option value="25-08">August 25</option>
+                    <option value="25-07">July 25</option>
+                    <option value="25-06">June 25</option>
+                    <option value="25-05">May 25</option>
+                    <option value="25-04">April 25</option>
+                    <option value="all">All</option>
+                </select>
+            </label>
+            <button id="applyMonthsButton" class="bgAndColor fontSize">Enter</button>
+        </span>
+
+        <div id="selectedMonthsContainer" class="optionContainer" hidden>
+            <span><u>Selected Months:</u></span>
+            <br>
+        </div>
+    
+        <div id="userInputContainer" class="optionContainer">
+            <div class="outerFilterBox">
+                <div class="innerFilterBox">
+                    <span>
+                        Name:
+                    </span>
+                    <input id="filterNameField" list="nameList" class="bgAndColor fontSize" type="text" placeholder="Filter by Name">
+                    <datalist id="nameList"></datalist>
+                </div>
+                <div class="innerFilterBox">
+                    <span>
+                        Reward:
+                    </span>
+                    <input id="filterRewardField" list="rewardList" class="bgAndColor fontSize" type="text" placeholder="Filter by Reward">
+                    <datalist id="rewardList"></datalist>
+                </div>
+            </div>
+        
+            <button id="filterButton" class="bgAndColor fontSize">Filter</button>
+        </div>
+
+        <table id="rewardsTable" class="redeemsTable">
+            <thead>
+                <tr class="tableHeadRow">
+                    <th>Redeemed At</th>
+                    <th>Username</th>
+                    <th>Reward</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+
+            <tbody class="tableBody">
+            </tbody>
+
+            <tfoot>
+                <tr class="tableFootRow">
+                    <th>
+                        Total Redeems:
+                    </th>
+
+                    <th id="totalRedeemsCount" colspan="2">
+
+                    </th>
+
+                    <th id="totalRedeemsCost">
+
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+
+    <script src="assets/js/loadRedeems.js"></script>
+</body>
+
+</html>

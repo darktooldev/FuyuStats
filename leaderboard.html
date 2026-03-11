@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Leaderboard</title>
-        <link rel="icon" href="Img/favicon.ico">
-        <link rel="stylesheet" href="style.css">
-    </head>
 
-    <body>
-        <header class="header">
-            <nav class="navigation">
-                <a class="link headerLink" href="index.html"><img id="backImage" alt="Back" src="Img/BackArrowImg.png"> Home Page</a>
-            </nav>
-            <span id="lastUpdate">Last Updated: 10.10.2025</span>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="icon" href="assets/Img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/redeems.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/table.css">
+</head>
 
-        <span class="selectedMonthBox">
-            <label for="selectMonth">Selected Month:</label>
+<body>
+    <header>
+        <nav>
+            <div class="navBox">
+                <a class="navLink" href="index.html"><img id="img" src="assets/Img/BackArrowImg.png" alt="[Back Arrow]" width="20" height="20">Home Page</a>
+            </div>
+        </nav>
+    </header>
 
-            <select name="selectMonth" id="selectMonth">
-                <option value="26-02" selected="selected">February 26</option>
-                <option value="26-01">January 26</option>
-                <option value="25-12">December 25</option>
-                <option value="25-11">November 25</option>
-                <option value="25-10">October 25</option>
-                <option value="25-09">September 25</option>
-                <option value="25-08">August 25</option>
-                <option value="25-07">July 25</option>
-                <option value="25-06">June 25</option>
-                <option value="25-05">May 25</option>
-                <option value="25-04">April 25</option>
-                <option value="all">All (LAAAG!)</option>
-         </select>
+    <main>
+        <span class="optionContainer">
+            <label>
+                Select Month:
+                <select class="bgAndColor" name="selectMonth" id="monthSelector">
+                    <option value="select" selected="selected">--Select Month--</option>
+                    <option value="26-02">February 26</option>
+                    <option value="26-01">January 26</option>
+                    <option value="25-12">December 25</option>
+                    <option value="25-11">November 25</option>
+                    <option value="25-10">October 25</option>
+                    <option value="25-09">September 25</option>
+                    <option value="25-08">August 25</option>
+                    <option value="25-07">July 25</option>
+                    <option value="25-06">June 25</option>
+                    <option value="25-05">May 25</option>
+                    <option value="25-04">April 25</option>
+                    <option value="all">All</option>
+                </select>
+            </label>
+            <button id="applyMonthsButton" class="bgAndColor fontSize">Enter</button>
         </span>
 
-        <table class="table">
-            <thead class="table-head">
-                <tr>
+        <div id="selectedMonthsContainer" class="optionContainer" hidden>
+            <span><u>Selected Months:</u></span>
+            <br>
+        </div>
+
+        <table id="leaderboardTable" class="leaderboardTable">
+            <thead>
+                <tr class="tableHeadRow">
                     <th>Rank</th>
                     <th>Username</th>
                     <th>Amount</th>
                 </tr>
             </thead>
-            <tbody class="table-body"></tbody>
+
+            <tbody class="tableBody">
+            </tbody>
         </table>
-        
-        <script src="scripts/leaderboardLoadJson.js"></script>
-    </body>
+    </main>
+
+    <script src="assets/js/loadLeaderboard.js"></script>
+</body>
+
 </html>

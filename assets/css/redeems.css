@@ -1,0 +1,87 @@
+#img {
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+}
+
+main {
+    font-size: 1.1rem;
+    margin: 20px;
+    min-width: min-content;
+    width: 50%;
+}
+
+button:hover {
+    background-color: rgb(216, 184, 115);
+}
+
+.optionContainer {
+    background-color: var(--blue);
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.bgAndColor {
+    background-color: var(--yellow);
+    color: var(--brown);
+}
+
+.fontSize {
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 4px;
+}
+
+#selectedMonthsContainer {
+    margin: 20px 0px 20px;
+}
+
+#selectedMonthsContainer button {
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+#selectedMonthsContainer button::first-letter {
+    color: red;
+}
+
+
+#monthSelector {
+    font-size: 1rem;
+}
+
+#userInputContainer {
+    margin: 30px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.outerFilterBox {
+    display: flex;
+}
+
+.innerFilterBox {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+#filterButton {
+    font-size: 1rem;
+    height: 25px;
+    width: 60px;
+    align-self: center;
+}
+
+@media screen and (orientation: portrait){
+    main {
+        width: 98%;
+        margin: auto auto 20px auto;
+    }
+
+    .outerFilterBox {
+        flex-direction: column;
+    }
+}

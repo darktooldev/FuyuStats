@@ -1,0 +1,17 @@
+:root {
+    --blue: rgb(20, 61, 103);
+    --lightblue: rgb(57, 124, 173);
+    --yellow: rgb(241, 212, 147);
+    --brown: rgb(74, 43, 0);
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: var(--lightblue);
+    color: var(--yellow);
+}
+
+a {
+    color: var(--yellow);
+}

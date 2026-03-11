@@ -1,0 +1,56 @@
+table {
+    border: 5px solid var(--brown);
+    border-radius: 10px;
+    border-spacing: 0;
+    margin-top: 20px;
+    width: 100%;
+}
+
+tr {
+    background-color: var(--blue);
+}
+
+th {
+    text-align: left;
+}
+
+.tableHeadRow th {
+    padding: 10px;
+    border-bottom: 5px solid var(--yellow);
+}
+
+.tableBody tr td {
+    padding: 10px;
+    border-bottom: 5px solid var(--lightblue);
+}
+
+.tableBody tr:last-child td {
+    border-bottom: none;
+}
+
+.tableFootRow th {
+    border-top: 3px solid var(--yellow);
+    padding: 10px;
+}
+
+@media screen and (orientation: portrait){ 
+    #leaderboardTable, #rewardsTable {
+        font-size: 1rem;
+        table-layout: fixed;
+    }
+
+    #leaderboardTable td:nth-child(1), #leaderboardTable th:nth-child(1) { width: 20%; }
+    #leaderboardTable td:nth-child(2), #leaderboardTable th:nth-child(2) { width: 60%; }
+    #leaderboardTable td:nth-child(3), #leaderboardTable th:nth-child(3) { width: 20%; }
+
+
+    #rewardsTable .tableBody tr td:nth-child(2), #rewardsTable .tableBody tr td:nth-child(3) {
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    #rewardsTable th:nth-child(1), #rewardsTable td:nth-child(1) { width: 20%; font-size: 0.7rem; }
+    #rewardsTable th:nth-child(2), #rewardsTable td:nth-child(2) { width: 30%; }
+    #rewardsTable th:nth-child(3), #rewardsTable td:nth-child(3) { width: 30%; }
+    #rewardsTable th:nth-child(4), #rewardsTable td:nth-child(4) { width: 15%; } 
+}
